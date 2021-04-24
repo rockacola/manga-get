@@ -1,10 +1,13 @@
 {
   "name": "manga-get",
   "description": "A JavaScript library to access manga sites programmatically.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "MIT",
   "main": "dist/index",
   "types": "dist/index",
+  "files": [
+    "dist"
+  ],
   "engines": {
     "node": ">=12.0.0"
   },
