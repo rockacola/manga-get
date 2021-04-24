@@ -11,6 +11,10 @@ import {
 const BASE_URL = `https://catmanga.org`
 
 export class CatmangaParser {
+  static getDefaultBaseUrl(): string {
+    return BASE_URL
+  }
+
   static async getManga(
     mangaId: string,
     options: GetMangaOptions = {}

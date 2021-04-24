@@ -17,6 +17,9 @@ const cheerio_1 = __importDefault(require("cheerio"));
 const axios_handler_1 = require("../handlers/axios-handler");
 const BASE_URL = `https://catmanga.org`;
 class CatmangaParser {
+    static getDefaultBaseUrl() {
+        return BASE_URL;
+    }
     static getManga(mangaId, options = {}) {
         return __awaiter(this, void 0, void 0, function* () {
             const url = this.getMangaUrl(mangaId, {

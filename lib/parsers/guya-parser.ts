@@ -10,6 +10,10 @@ import {
 const BASE_URL = `https://guya.moe`
 
 export class GuyaParser {
+  static getDefaultBaseUrl(): string {
+    return BASE_URL
+  }
+
   static async getManga(
     mangaId: string,
     options: GetMangaOptions = {}

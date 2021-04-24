@@ -1,5 +1,6 @@
 import { CatmangaUrlParserOptions, Chapter, GetChapterOptions, GetMangaOptions, Manga } from '../interfaces';
 export declare class CatmangaParser {
+    static getDefaultBaseUrl(): string;
     static getManga(mangaId: string, options?: GetMangaOptions): Promise<Manga>;
     static getChapter(mangaId: string, chapterId: string, options?: GetChapterOptions): Promise<Chapter>;
     static getChapterByRelativePath(relativePath: string, options?: GetChapterOptions): Promise<Chapter>;

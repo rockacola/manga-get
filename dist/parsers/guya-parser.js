@@ -13,6 +13,9 @@ exports.GuyaParser = void 0;
 const axios_handler_1 = require("../handlers/axios-handler");
 const BASE_URL = `https://guya.moe`;
 class GuyaParser {
+    static getDefaultBaseUrl() {
+        return BASE_URL;
+    }
     static getManga(mangaId, options = {}) {
         return __awaiter(this, void 0, void 0, function* () {
             const url = this.getMangaUrl(mangaId, {
