@@ -1,12 +1,9 @@
-import { GuyaParser, userAgentHelper } from '../lib'
+import { GuyaParser } from '../lib'
 
 // const mangaId = 'Kaguya-Wants-To-Be-Confessed-To'
 const mangaId = 'Oshi-no-Ko'
-const userAgent = userAgentHelper.getRandom()
 
 ;(async () => {
-  const manga = await GuyaParser.getManga(mangaId, {
-    userAgent,
-  })
+  const manga = await GuyaParser.getManga(mangaId)
   console.log('manga:', manga)
 })()

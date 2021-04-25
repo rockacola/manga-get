@@ -1,13 +1,10 @@
-import { CatmangaParser, userAgentHelper } from '../lib'
+import { CatmangaParser } from '../lib'
 
 // const mangaId = 'saint'
 const mangaId = 'bbq'
 const chapterId = '2'
-const userAgent = userAgentHelper.getRandom()
 
 ;(async () => {
-  const chapter = await CatmangaParser.getChapter(mangaId, chapterId, {
-    userAgent,
-  })
+  const chapter = await CatmangaParser.getChapter(mangaId, chapterId)
   console.log('chapter:', chapter)
 })()
