@@ -70,15 +70,13 @@ export class KireicakeParser {
     return `${baseUrl}/series/${mangaId}`
   }
 
-  // static getChapterUrl(
-  //   mangaId: string,
-  //   chapterId: string,
-  //   options: KireicakeUrlParserOptions = {}
-  // ): string {
-  //   // TODO: support for 'partial chapter'
-  //   const baseUrl = options.baseUrl || BASE_URL
-  //   return `${baseUrl}/series/${mangaId}/en/0/${chapterId}`
-  // }
+  static getChapterUrl(
+    mangaId: string,
+    chapterId: string,
+    options: KireicakeUrlParserOptions = {}
+  ): string {
+    throw new Error('Not implemented.')
+  }
 
   static getUrl(
     relativePath: string,
@@ -100,9 +98,7 @@ export class KireicakeParser {
     }
 
     const targetScriptBody = this.getScriptBodyContainsChapterDetails($)
-    // console.log('targetScriptBody:', targetScriptBody)
     const dataArr = this.extractPagesObject(targetScriptBody)
-    // console.log('dataObj:', dataObj)
 
     for (const data of dataArr) {
       chapter.pages?.push({
@@ -115,8 +111,6 @@ export class KireicakeParser {
   }
 
   private static getScriptBodyContainsChapterDetails($: cheerio.Root): string {
-    // console.log('getScriptBodyContainsChapterDetails triggered.')
-
     let matchBody: string = ''
     $('script').each((index, el) => {
       const $script = cheerio.load(el)
@@ -133,15 +127,12 @@ export class KireicakeParser {
   }
 
   private static extractPagesObject(scriptBody: string): any[] {
-    // console.log('extractPagesObject triggered.')
-
     try {
       const re = /varpages=(.*?);/g
       const res = scriptBody.replace(/[ ]/g, '').match(re) || []
-      // console.log('res:', res)
       const dataStr = res[0].replace('varpages=', '').slice(0, -1)
-      const dataObj = JSON.parse(dataStr)
-      return dataObj
+      const dataArr = JSON.parse(dataStr)
+      return dataArr
     } catch (err) {
       console.log('Error in extractPagesObject. err.message:', err.message)
       return []
