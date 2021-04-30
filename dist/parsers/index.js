@@ -12,4 +12,5 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./catmanga-parser"), exports);
 __exportStar(require("./guya-parser"), exports);
+__exportStar(require("./kireicake-parser"), exports);
 //# sourceMappingURL=index.js.map
