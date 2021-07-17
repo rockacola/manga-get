@@ -90,7 +90,11 @@ export class KireicakeParser {
     url: string,
     options: GetChapterOptions = {}
   ): Promise<Chapter> {
-    const doc = await AxiosHandler.getPage(url, options.userAgent)
+    const doc = await AxiosHandler.getPage(
+      url,
+      options.userAgent,
+      options.proxy
+    )
     const $ = cheerio.load(doc)
 
     const chapter: Chapter = {
